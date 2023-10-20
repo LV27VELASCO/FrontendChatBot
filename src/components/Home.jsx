@@ -1,5 +1,5 @@
 import React from 'react'
-import background from "../Assets/Aerolinea.jpg"
+import background from "../assets/Aerolinea.jpg"
 import ChatBoot from './ChatBoot'
 import { Outlet } from 'react-router-dom'
 
