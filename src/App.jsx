@@ -3,18 +3,15 @@ import "./index.css";
 import "./App.css";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import Header from "./components/Header";
 import Protected from "./components/Protected";
 import Home from "./components/Home";
 import ChatBoot from "./components/ChatBoot";
 import AdminChats from "./components/AdminChats";
 function App() {
-
   return (
     <>
-    {/* <ChatBoot/> */}
-      <BrowserRouter>
           <Routes>
             <Route element={<Header/>}>
               <Route path="login" element={<Login/>}/>
@@ -28,7 +25,6 @@ function App() {
               </Route>
             </Route>
           </Routes>
-      </BrowserRouter>
     </>
   );
 }
