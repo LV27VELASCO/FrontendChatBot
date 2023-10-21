@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
 
 const useChatHistory = () => {
     const [messages, setMessages] = useState([]);
@@ -9,7 +10,7 @@ const useChatHistory = () => {
     const historyChat = () => {
       const token = localStorage.getItem('token');
       let id = JSON.parse(localStorage.getItem('dataUser')).id;
-      const url = `http://167.172.158.165:5000/api/historial_chat/${id}`;
+      const url = `https://aerlonieapi.shop:5000/api/historial_chat/${id}`;
   
       axios.get(url, {
         headers: {
@@ -19,7 +20,9 @@ const useChatHistory = () => {
           setMessages(data);
         })
         .catch(err => {
-          console.log(err);
+          toast.error('Ocurrió un error, intententelo más tarde', {
+            position: toast.POSITION.BOTTOM_RIGHT
+        });
         });
     };
   
@@ -29,7 +32,7 @@ const useChatHistory = () => {
       };
       setLoad(true);
       const token = localStorage.getItem('token');
-      const url = "http://167.172.158.165:5000/api/chat";
+      const url = "https://aerlonieapi.shop:5000/api/chat";
       
       axios.post(url, data, {
         headers: {
@@ -42,7 +45,9 @@ const useChatHistory = () => {
         historyChat();
       })
       .catch(err => {
-        console.log(err);
+        toast.error('Ocurrió un error, intententelo más tarde', {
+          position: toast.POSITION.BOTTOM_RIGHT
+      });
       })
       .finally(fn => {
         setLoad(false);

@@ -4,6 +4,7 @@ import Loader from './Loader'
 import Created from './Created'
 import { NavLink } from 'react-router-dom'
 import '../styles/height.css'
+import { ToastContainer } from 'react-toastify'
 
 const SignUp = () => {
  const {submit,handleSubmit,register,errors,userCreate,Error,userExist,load} =useSignUp()
@@ -91,6 +92,7 @@ const SignUp = () => {
      </form>
     </div>
     }
+    <ToastContainer />
     </div>
   )
 }

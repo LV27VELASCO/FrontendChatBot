@@ -9,6 +9,9 @@ import Protected from "./components/Protected";
 import Home from "./components/Home";
 import ChatBoot from "./components/ChatBoot";
 import AdminChats from "./components/AdminChats";
+import ContactUser from "./components/ContactUser";
+import RegresionL from "./components/RegresionL";
+import AdminContact from "./components/AdminContact";
 function App() {
   return (
     <>
@@ -18,9 +21,11 @@ function App() {
               <Route path="signUp" element={<SignUp/>} />
               <Route element={<Protected/>}>
                 <Route path='/' element={<Home/>}>
-                  <Route path='/' element={<h1>Hola mundo</h1>}/>
+                  <Route path='/' element={<RegresionL/>}/>
                   <Route path='/chatBOT' element={<ChatBoot/>}/>
                   <Route path='/HistoryChat' element={<AdminChats/>}/>
+                  <Route path='/ContactSuport' element={<ContactUser/>}/>
+                  <Route path='/HistoryContact' element={<AdminContact/>}/>
                 </Route>
               </Route>
             </Route>

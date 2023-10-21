@@ -24,7 +24,7 @@ const Header = () => {
         <nav className="flex gap-4">
         {token && 
               <>
-              <ul className="flex flex-col relative">
+              <ul className="flex relative gap-3">
                 <ChatNav isAdmin={user.admin}/>
               </ul>
               <ul className="flex flex-col relative">
@@ -35,7 +35,7 @@ const Header = () => {
                   <p className="pl-2 pr-3">{user.name}</p>
                   <i className="fa-solid fa-user"></i>
                 </li>
-                <div className="absolute top-10">
+                <div className="absolute top-10 right-0">
                 <LoguedUser logued={logued}/>
                 </div>
               </ul>

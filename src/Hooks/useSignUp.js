@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {useForm} from 'react-hook-form';
 import axios from "axios"
 import { NavLink,useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 const useSignUp = () => {
   const [userCreate, setUserCreate] = useState(false);
@@ -12,8 +13,7 @@ const useSignUp = () => {
   const { handleSubmit, register, reset, formState: { errors } } = useForm();
 
   const submit =datos=>{
-    console.log(datos)
-    const baseUrl ="http://167.172.158.165:5000/api/usuarios";
+    const baseUrl ="https://aerlonieapi.shop:5000/api/usuarios";
     var config = {
       method: 'post',
       url: baseUrl,
@@ -22,13 +22,15 @@ const useSignUp = () => {
     setLoad(true)
     axios(config)
     .then(res=>{
-      console.log(res.data)
       if(res.status == 200){
          if(!res.data.error){
+          toast.success('Usuario creado con Éxito!', {
+            position: toast.POSITION.BOTTOM_RIGHT
+        });
           setUserCreate(true)
           setTimeout(() => {
           navigate('/')
-          }, 2500);
+          }, 3500);
          }else{
           setUserExist(true)
           setTimeout(() => {

@@ -23,11 +23,6 @@ const Login = () => {
             <h3 className="text-2xl text-center font-semibold text-gray-800 mb-7">
               Bienvenido, por favor ingresa tu correo electrónico y contraseña
             </h3>
-            {/* <ul className="bg-red-500 px-3 py-2 w-3/4 rounded-lg flex flex-col items-center mb-2 gap-1">
-            <h4 className="text-xl">Test data</h4>
-            <li className="flex gap-1 items-center"><i className="fa-solid fa-envelope"></i><span>john@gmail.com</span></li>
-            <li className="flex gap-1 items-center"><i className="fa-solid fa-lock"></i><span>john1234</span></li>
-        </ul> */}
           </div>
           <form
             className="flex flex-col gap-4 py-5"

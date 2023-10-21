@@ -3,6 +3,7 @@ import { Box, Button, Card, CardContent, Grid, TextField } from "@mui/material";
 import Message from "./Message";
 import useChatHistory from '../Hooks/useChatHistory';
 import "../styles/loader.css";
+import { ToastContainer } from 'react-toastify';
 const ChatBoot = () => {
   const messagesListRef = useRef(null);
   const [messageInput, setMessageInput] = useState("");
@@ -85,6 +86,7 @@ const ChatBoot = () => {
           </Box>
         </CardContent>
       </Card>
+      <ToastContainer />
     </Grid>
   );
 };

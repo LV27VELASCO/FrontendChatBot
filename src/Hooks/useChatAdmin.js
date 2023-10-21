@@ -6,7 +6,7 @@ const useChatAdmin = () => {
   
     const ChatAdmin = () => {
       const token = localStorage.getItem('token');
-      const url = "http://167.172.158.165:5000/api/historial_chat";
+      const url = "https://aerlonieapi.shop:5000/api/historial_chat";
   
       axios.get(url, {
         headers: {
